@@ -39,15 +39,15 @@ public:
 		Arbol1 = new Modelo3D("NormalMapping.vertexshader", "NormalMapping.fragmentshader", "Assets/Modelos/Arbol/Arbol1.obj", "Assets/Modelos/Arbol/TexturaArbol.png", "Assets/Modelos/Arbol/TexturaArbol.png", "Assets/Modelos/Arbol/ArbolNormales.png", 3);
 
 		ModRetiro = new Modelo3D("NormalMapping.vertexshader", "NormalMapping.fragmentshader", "Assets/Modelos/ParedesRetiro/RetiroParedes.obj", "Assets/Modelos/ParedesRetiro/Madera.jpg", "Assets/Modelos/ParedesRetiro/Madera.jpg", "Assets/Modelos/ParedesRetiro/Madera_Normal.jpg", 1);
-		Barandal = new Modelo3D("NormalMapping.vertexshader", "NormalMapping.fragmentshader", "Assets/Modelos/Barandal/Barandal.obj", "Assets/Modelos/Barandal/Tablas.jpg", "Assets/Modelos/Barandal/Tablas.jpg", "Assets/Modelos/Barandal/Tablas_Normal.jpg", 1);
+		Barandal = new Modelo3D("NormalMapping.vertexshader", "NormalMapping.fragmentshader", "Assets/Modelos/Barandal/Barandal.obj", "Assets/Modelos/Barandal/Tablas.jpg", "Assets/Modelos/Barandal/Tablas.jpg", "Assets/Modelos/Barandal/Tablas_Normal.jpg", 1); // NO EXISTEN ALGUNOS ARCHIVOS EN LA CARPETA
 		Banios = new Modelo3D("NormalMapping.vertexshader", "NormalMapping.fragmentshader", "Assets/Modelos/Baños/Baños.obj", "Assets/Modelos/Baños/Pared.jpg","Assets/Modelos/Baños/Pared.jpg","Assets/Modelos/Baños/Pared_Normal.jpg", 1);
 		PuestoPiso = new Modelo3D("NormalMapping.vertexshader", "NormalMapping.fragmentshader", "Assets/Modelos/Puesto/Suelo.obj", "Assets/Modelos/Puesto/Blocks.jpg", "Assets/Modelos/Puesto/Blocks.jpg", "Assets/Modelos/Puesto/Blocks_Normal.jpg", 1);
-		PuestoTablas = new Modelo3D("NormalMapping.vertexshader", "NormalMapping.fragmentshader", "Assets/Modelos/Puesto/Tablas.obj","Assets/Modelos/Puesto/Tablas,jpg", "Assets/Modelos/Puesto/Tablas.jpg", "Assets/Modelos/Puesto/Tablas_Normal.jpg", 1);
+		PuestoTablas = new Modelo3D("NormalMapping.vertexshader", "NormalMapping.fragmentshader", "Assets/Modelos/Puesto/Tablas.obj","Assets/Modelos/Puesto/Tablas.jpg", "Assets/Modelos/Puesto/Tablas.jpg", "Assets/Modelos/Puesto/Tablas_Normal.jpg", 1);
 		PuestoTecho = new Modelo3D("NormalMapping.vertexshader", "NormalMapping.fragmentshader", "Assets/Modelos/Puesto/Techo.obj", "Assets/Modelos/Puesto/Roof.jpg", "Assets/Modelos/Puesto/Roof.jpg", "Assets/Modelos/Puesto/Roof_Normal.jpg", 1);
 		ExpTecho = new Modelo3D("NormalMapping.vertexshader", "NormalMapping.fragmentshader", "Assets/Modelos/Expo/Predes.obj", "Assets/Modelos/Expo/LadrillosBridge.jpg", "Assets/Modelos/Expo/LadrillosBridge.jpg", "Assets/Modelos/Expo/Ladrillos_Normal.jpg", 1);
 		ExpoPiso = new Modelo3D("NormalMapping.vertexshader", "NormalMapping.fragmentshader", "Assets/Modelos/Expo/PisoExpo.obj", "Assets/Modelos/Expo/Azulejo2Bridge.jpg", "Assets/Modelos/Expo/Azulejo2Bridge.jpg", "Assets/Modelos/Expo/Piso_Normal.jpg", 1);
 		Casita = new Modelo3D("NormalMapping.vertexshader", "NormalMapping.fragmentshader", "Assets/Modelos/Casita/Casita.obj", "Assets/Modelos/Casita/Tablas.jpg", "Assets/Modelos/Casita/Tablas.jpg", "Assets/Modelos/Casita/Tablas_Normal.jpg", 1);
-		Rocas = new Modelo3D("NormalMapping.vertexshader", "NormalMapping.fragmentshader", "Assets/Modelos/Rocas/Rocas.obj","Assets/Modelos/Rocas/roca.jpg", "Assets/Models/Rocas/roca.jpg", "Assets/Models/Rocas/roca_mormal.jpg", 1);
+		Rocas = new Modelo3D("NormalMapping.vertexshader", "NormalMapping.fragmentshader", "Assets/Modelos/Rocas/Rocas.obj","Assets/Modelos/Rocas/roca.jpg", "Assets/Modelos/Rocas/roca.jpg", "Assets/Modelos/Rocas/roca_normal.jpg", 1); //**
 		Valla = new Modelo3D("NormalMapping.vertexshader", "NormalMapping.fragmentshader", "Assets/Modelos/Vallas/Vallas.obj", "Assets/Modelos/Vallas/madera2.jpg", "Assets/Modelos/Vallas/madera2.jpg", "Assets/Modelos/Vallas/madera2_normal.jpg", 1);
 		CaminoRocas = new Modelo3D("NormalMapping.vertexshader", "NormalMapping.fragmentshader", "Assets/Modelos/Camino/CaminoDePiedra.obj", "Assets/Modelos/Camino/Roca2.jpg", "Assets/Modelos/Camino/Roca2_Normal.jpg", "Assets/Modelos/Casita/Tablas_Normal.jpg", 1);
 		/*Agua*/
@@ -100,7 +100,7 @@ public:
 		/*Se coloca en la varible Y_Position la posción del Y del terreno apartir de la posición de la camara*/
 		Y_Position = Terreno->GetHeightFromRealVector(position) + 3.0f;
 
-		Arbol1->Draw(MVP, ViewMatrix, ModelMatrix, ModelView3x3Matrix, ProjectionMatrix, vec3(10, Terreno->GetHeightFromRealVector(glm::vec3(10, 0, 3)), 3), vec3(1, 1, 1), 0, DayTransicionDuration);
+		
 		/*Carga los billboards*/                              //Posicion  Esta función me dice que altura es la del terreno en esas coords Escala
 																   //X                            Y                            Z
 		ModRetiro->Draw(MVP, ViewMatrix, ModelMatrix, ModelView3x3Matrix, ProjectionMatrix, vec3(10, Terreno->GetHeightFromRealVector(glm::vec3(35, 0, 70)), 0), vec3(5, 5, 5), 0, DayTransicionDuration);
@@ -116,6 +116,7 @@ public:
 		Casita->Draw(MVP, ViewMatrix, ModelMatrix, ModelView3x3Matrix, ProjectionMatrix, vec3(10, Terreno->GetHeightFromRealVector(glm::vec3(35, 0, 70)), 0), vec3(5, 5, 5), 0, DayTransicionDuration);
 		Valla->Draw(MVP, ViewMatrix, ModelMatrix, ModelView3x3Matrix, ProjectionMatrix, vec3(10, Terreno->GetHeightFromRealVector(glm::vec3(35, 0, 70)), 0), vec3(5, 5, 5), 0, DayTransicionDuration);
 
+		Arbol1->Draw(MVP, ViewMatrix, ModelMatrix, ModelView3x3Matrix, ProjectionMatrix, vec3(10, Terreno->GetHeightFromRealVector(glm::vec3(10, 0, 3)), 3), vec3(1, 1, 1), 0, DayTransicionDuration);
 		bill1->Draw(ViewMatrix, ProjectionMatrix, ModelMatrix, vec3(-5, Terreno->GetHeightFromRealVector(glm::vec3(-5, 0, 1)) + 3, 1), vec2(1, 1), DayTransicionDuration);
 
 		Pasto->Draw(ViewMatrix, ProjectionMatrix, ModelMatrix, vec3(0.2, Terreno->GetHeightFromRealVector(glm::vec3(0.2, 0, 1)) + 0.2, 1), vec2(1, 1), DayTransicionDuration);
